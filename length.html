@@ -74,27 +74,16 @@
                     <div class="col-lg-6">
                         <form role="form">
                             <div class="form-group">
-                                <label>Ingresar Xb</label>
-                                <input id="xb" class="form-control">
-                                <p class="help-block">Ingresar Xb</p>
+                                <label>Ingresar V (Unidades C)</label>
+                                <input id="v" type="number" class="form-control">
                             </div>
-                            <div>
-                             <label>Ingresar Xa</label>
-                                <input id="xa" class="form-control">
-								<p class="help-block">Ingresar Xa</p>
-                            </div><br>
-                           <button type="button" class="btn btn-lg btn-success" onClick="capturar();tiempo()"> Evaluar >></button>
+                           <br>
+                           <button type="button" class="btn btn-lg btn-success" onClick="contraccion()"> Evaluar >></button>
                         </form>
                     </div>
                     <div class="col-lg-6">
-						<div>
-							<label>X'b-X'a =</label><input id="resultado" type="number" class="form-control">
-						</div><br>
                         <div>
-							<label>L' = </label><input id="tp" type="number" class="form-control"><br>
-							<div>
-								<label>L = </label><input type="number" class="form-control"><br>
-							</div>
+							<label>L' = </label><input id="resultado" type="number" class="form-control"><br>
 						</div>
 						<!-- /.row -->
 					</div>

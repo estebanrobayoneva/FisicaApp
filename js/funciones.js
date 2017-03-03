@@ -24,6 +24,12 @@ function tiempo (){
 
 
 
-function dilatacion(){
-	
+function contraccion(){
+	// obtenemos el valor de los elemento
+    var v = parseFloat(document.getElementById("v").value);
+	var c = 300000000;
+	var r = Math.abs(1-(v*v));
+	var k = Math.sqrt(r);
+	resultado = k;
+	document.getElementById("resultado").value = resultado;
 }
