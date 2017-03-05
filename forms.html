@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="form.html"><img src="fisica.PNG" WIDTH=160 HEIGHT=40> </a>
+                <a class="navbar-brand" href="index.html"><img src="fisica.PNG" WIDTH=160 HEIGHT=40> </a>
             </div>
             <!-- Top Menu Items -->
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -40,7 +40,7 @@
                                 <a href="#">Transformadas de Lorentz</a>
                             </li>
                             <li>
-                                <a href="length.html">Ecuacines Contración de la luz</a>
+                                <a href="forms.html">Ecuacines 2</a>
                             </li>
                             <li>
                                 <a href="forms.html">Ecuacines 3</a>
@@ -82,19 +82,25 @@
                              <label>Ingresar Xa</label>
                                 <input id="xa" class="form-control">
 								<p class="help-block">Ingresar Xa</p>
-                            </div><br>
-                           <button type="button" class="btn btn-lg btn-success" onClick="capturar();tiempo()"> Evaluar >></button>
+                            </div>
+                            <div>
+                                <label>V = </label><input id="velocidad" type="number" class="form-control"><br>
+                            </div>
+                            <div>
+                                <label>T = </label><input id="t" type="number" class="form-control"><br>
+                            </div>
+                            <br>
+                           <button type="button" class="btn btn-lg btn-success" onClick="capturar();contraccionLongitudP()"> Evaluar >></button>
                         </form>
                     </div>
                     <div class="col-lg-6">
-						<div>
-							<label>X'b-X'a =</label><input id="resultado" type="number" class="form-control">
-						</div><br>
+						
                         <div>
-							<label>L' = </label><input id="tp" type="number" class="form-control"><br>
+							<label>L' = </label><input id="valorLp" type="number" class="form-control"><br>
 							<div>
-								<label>L = </label><input type="number" class="form-control"><br>
+								<label>L = </label><input id="valorL" type="number" class="form-control"><br>
 							</div>
+                            
 						</div>
 						<!-- /.row -->
 					</div>
