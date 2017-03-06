@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Transformadas de Lorentz</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+	function selectV(){
+		var uv = document.getElementById("unidadesV");
+		var vel = document.getElementById("v").value;
+		var tv=document.getElementById("vc");
+		var c = 299792458;
+		if (uv.selectedIndex==0)tv.value=0;
+		if (uv.selectedIndex==1)var ms = vel/c; tv.value = ms;
+		if (uv.selectedIndex==2)var kh = vel*(1000/3600)/c; tv.value = kh;
+		console.log(uv.selectedIndex);
+	}
+	function selectT(){
+		var ut = document.getElementById("unidadesT");
+		var tie = document.getElementById("t").value;
+		var tt = document.getElementById("ts");
+		if (ut.selectedIndex==0)tt.value=0;
+		if (ut.selectedIndex==1)var m = parseFloat(tie*60); tt.value = m;
+		if (ut.selectedIndex==2)var h = parseFloat(tie*3600); tt.value = h;
+		console.log(ut.selectedIndex);
+	}
+	function selectX(){
+		var ux = document.getElementById("unidadesX");
+		var x = document.getElementById("x").value;
+		var tx = document.getElementById("xm");
+		if (ux.selectedIndex==0)var tt = document.getElementById("xm"); tx.value=0;
+		if (ux.selectedIndex==1)var km = x/1000;  tx.value = km;
+		if (ux.selectedIndex==2)var mi = x/1609,34; tx.value = mi;
+		console.log(ux.selectedIndex);
+	}
+</script> 
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="fisica.PNG" WIDTH=160 HEIGHT=40> </a>
+            </div>
+            <!-- Top Menu Items -->
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Ecuaciones 
+						<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Transformadas de Lorentz</a>
+                            </li>
+                            <li>
+                                <a href="forms.html">Ecuacines 2</a>
+                            </li>
+                            <li>
+                                <a href="convertir.html">Convertir datos</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+			<div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Transformadas de Lorentz
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Transformadas de Lorentz</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Convertir datos
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>Ingresar v</label>
+                                <input id="v" type="number" class="form-control">
+								<select name="unidadesV" id="unidadesV" onchange="selectV()" class="form-control">
+									<option>Selecciona las unidades</option>
+									<option>m/s</option>
+									<option>Km/h</option>
+								</select>
+                            </div>
+                            <div>
+                             <label>Ingresar t</label>
+                                <input id="t" type="number" class="form-control">
+								<select name="unidadesT" id="unidadesT" onchange="selectT()" class="form-control">
+									<option>Selecciona las unidades</option>
+									<option>minutos</option>
+									<option>horas</option>
+								</select>
+                            </div>
+                            <div>
+                                <label>Ingresar X </label>
+								<input id="X" type="number" class="form-control">
+								<select name="unidadesX" id="unidadesX" onchange="selectX()" class="form-control">
+									<option>Selecciona las unidades</option>
+									<option>kilometros</option>
+									<option>millas</option>
+								</select>
+                            </div>
+                            <br>
+                          </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <div>
+							<label>V</label><input id="vc" type="number" class="form-control">
+							<p class="help-block">Velocidad en c</p>
+						</div>
+						<div>
+							<label>T</label><input id="ts" type="number" class="form-control">
+							<p class="help-block">Tiempo en segundos</p>
+						</div>
+						<div>
+							<label>X</label><input id="xm" type="number" class="form-control">
+							<p class="help-block">Distancia en metros</p>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container-fluid -->
+				</div>
+				<!-- /#page-wrapper -->
+			</div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+	<script src="js/funciones.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

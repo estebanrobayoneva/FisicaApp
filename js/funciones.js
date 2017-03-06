@@ -1,6 +1,6 @@
 //L
 function capturar(){
-   var valorL = contraccionLongitudP()*factorLorentz();
+	var valorL = contraccionLongitudP()*factorLorentz();
 	document.getElementById("valorL").value = valorL;
 } 
 
@@ -24,13 +24,13 @@ function tiempoP (){
 	document.getElementById("tp").value = tp;
 }
 
-
 //L de prima
 function contraccionLongitudP(){
 	var xb = document.getElementById("xb").value;
     var xa = document.getElementById("xa").value;
 	resultado = parseFloat(xb)-parseFloat(xa);
 	var valorLp = resultado/factorLorentz();
-	document.getElementById("valorLp").value = valorLp;
+	document.getElementById("valorLp").value = valorLp;}
 	return valorLp;
 }
+
