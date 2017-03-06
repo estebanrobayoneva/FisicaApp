@@ -17,31 +17,33 @@
 	function selectV(){
 		var uv = document.getElementById("unidadesV");
 		var vel = document.getElementById("v").value;
-		var tv=document.getElementById("vc");
 		var c = 299792458;
 		if (uv.selectedIndex==0)tv.value=0;
-		if (uv.selectedIndex==1)var ms = vel/c; tv.value = ms;
-		if (uv.selectedIndex==2)var kh = vel*(1000/3600)/c; tv.value = kh;
+		else if  (uv.selectedIndex==2)var ms = vel/c; document.getElementById("vc").value = ms;
+		else if  (uv.selectedIndex==4)var kh = vel*(1000/3600)/c; document.getElementById("vc").value = kh;
 		console.log(uv.selectedIndex);
-	}
+	};
+	</script>
+	<script type="text/javascript">
 	function selectT(){
 		var ut = document.getElementById("unidadesT");
 		var tie = document.getElementById("t").value;
-		var tt = document.getElementById("ts");
-		if (ut.selectedIndex==0)tt.value=0;
-		if (ut.selectedIndex==1)var m = parseFloat(tie*60); tt.value = m;
-		if (ut.selectedIndex==2)var h = parseFloat(tie*3600); tt.value = h;
-		console.log(ut.selectedIndex);
-	}
+		if (ut.selectedIndex==0){tt.value=0;}
+		else if (ut.selectedIndex==2){var m = tie*60; document.getElementById("ts").value = m;}
+		else if (ut.selectedIndex==4){var h = tie*3600; document.getElementById("ts").value = h;}
+		console.log(m);
+		console.log(h);
+	};
+	</script>
+	<script type="text/javascript">
 	function selectX(){
 		var ux = document.getElementById("unidadesX");
 		var x = document.getElementById("x").value;
-		var tx = document.getElementById("xm");
 		if (ux.selectedIndex==0)var tt = document.getElementById("xm"); tx.value=0;
-		if (ux.selectedIndex==1)var km = x/1000;  tx.value = km;
-		if (ux.selectedIndex==2)var mi = x/1609,34; tx.value = mi;
+		else if  (ux.selectedIndex==2)var km = x/1000;  document.getElementById("xm").value = km;
+		else if  (ux.selectedIndex==4)var mi = x/1609,34; document.getElementById("xm").value = mi;
 		console.log(ux.selectedIndex);
-	}
+	};
 </script> 
 </head>
 <body>
@@ -108,7 +110,9 @@
                                 <input id="v" type="number" class="form-control">
 								<select name="unidadesV" id="unidadesV" onchange="selectV()" class="form-control">
 									<option>Selecciona las unidades</option>
+									<option>-------</option>
 									<option>m/s</option>
+									<option>-------</option>
 									<option>Km/h</option>
 								</select>
                             </div>
@@ -117,7 +121,9 @@
                                 <input id="t" type="number" class="form-control">
 								<select name="unidadesT" id="unidadesT" onchange="selectT()" class="form-control">
 									<option>Selecciona las unidades</option>
+									<option>-------</option>
 									<option>minutos</option>
+									<option>-------</option>
 									<option>horas</option>
 								</select>
                             </div>
@@ -126,7 +132,9 @@
 								<input id="X" type="number" class="form-control">
 								<select name="unidadesX" id="unidadesX" onchange="selectX()" class="form-control">
 									<option>Selecciona las unidades</option>
+									<option>-------</option>
 									<option>kilometros</option>
+									<option>-------</option>
 									<option>millas</option>
 								</select>
                             </div>
